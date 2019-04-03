@@ -200,7 +200,23 @@ Markdown format:
   <details>
     <summary>简介</summary>
   	<p>
-    	None
+    	首次引入GCN到定位中。
+    </p>
+    <p>
+      本文认为此前的方法存在两个未解决问题：<b>Semantic Misalignment</b>和<b>Structural Misalignment</b>。如下图片所示：
+      <div align="center"><img height="300px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/MAN_-_1.png"></div>
+    </p>
+  <p>
+    整体结构：
+    <div align="center"><img height="400px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/MAN_-_2.png"></div>
+  </p>
+    <p>
+      主要亮点：
+      <ul>
+        <li>此前的方法在生成Clip时视觉信息与描述缺少结合，为了早期过滤掉与描述不相关的视觉特征，本文将描述特征做为动态滤波器，对从视频提取出的I3D特征进行滤波，;</li>
+        <li>为生成多尺度的的Clip，采用时序池化;</li>
+  			<li>为深度挖掘Moments之间的关系解决Structural Misalignment，创新的设计了IGAN（Iterative Graph Adjustment Network），将Clip作为图的节点，残差连接、迭代地优化邻接矩阵。下图可视化显示了IGAN的有效性：<div align="center"><img height="350px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/MAN_-_3.png"></div></li>
+    	</ul> 
     </p>
   </details>
 
