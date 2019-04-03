@@ -169,7 +169,7 @@ Markdown format:
   <img src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266669/Awesome%20Language%20Moment%20Retrieval/find_and_focus_-_3.png">
     <p>
     <p>
-    	在定位过程中，得到双流特征后，用<b>基于语义的TAG（Temporal Actionness Grouping）</b>生成Clip Proposal，将Sentences与Clip之间的Cross-domain Matching问题转换为<b>Linear Programming<b>问题。
+      在定位过程中，得到双流特征后，用<b>基于语义的TAG（Temporal Actionness Grouping）</b>生成Clip Proposal，将Sentences与Clip之间的Cross-domain Matching问题转换为<b>Linear Programming</b>问题。
     </p>
       <p>
     	数据集采用ActivityNet Captions和Modified LSMDC。一些实验结果如下：
