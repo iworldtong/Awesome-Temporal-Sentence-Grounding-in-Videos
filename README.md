@@ -86,7 +86,7 @@ Markdown format:
     	使用Densecap对视频每一帧进行描述，根据相邻图像Captions之间的相似性进行组合得到视频语义片段。
     </p>
     <p>
-    	采用了两种方法比较Captions之间的相似性：Word2Vec和Skip-thoughts vector。可能因为数据集小小的原因后者效果较优。
+    	采用了两种方法比较Captions之间的相似性：Word2Vec和Skip-thoughts vector。可能因为数据集较小的原因后者效果较优。
     </p>
   </details>
 
@@ -116,7 +116,7 @@ Markdown format:
   		<ul> 
   			<li>C3D生成 visual feature；</li>
   			<li>skip-thought / LSTM生成sentence embedding；</li>
-  			<li>将两部分的feature融合在一起 然后生成alignment score和boundary offset。alignment score代表了输入的query和clip是否匹配，boundary offset调整了 输入clip的边界。</li>
+  			<li>将两部分的feature融合在一起 然后生成alignment score和boundary offset。alignment score代表了输入的query和clip是否匹配，boundary offset调整了输入clip的边界。</li>
     	</ul>
     </p>
     <p>
@@ -135,7 +135,7 @@ Markdown format:
     <summary>简介</summary>
     <img height="250px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554265133/Awesome%20Language%20Moment%20Retrieval/SPRL_-_0.png">
     <p>
-      本文聚焦于对视频中符合描述的人的检测，但可以方面得扩展到其他任务，如Clip Retrieval、Action Detection等。
+      本文聚焦于对视频中符合描述的人的检测，但可以方便地扩展到其他任务，如Clip Retrieval、Action Detection等。
     </p>
     <img height="300px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554265133/Awesome%20Language%20Moment%20Retrieval/SPRL_-_1.png">
     <p>
@@ -196,7 +196,22 @@ Markdown format:
 ### 2019
 
 - [MAN: Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment](https://arxiv.org/abs/1812.00087) - Da Zhang et al, `CVPR 2019`. 
+
+  <details>
+    <summary>简介</summary>
+  	<p>
+    	None
+    </p>
+  </details>
+
 - [Peeking into the Future: Predicting Future Person Activities and Locations in Videos](https://arxiv.org/abs/1902.03748) - Junwei Liang et al, `CVPR 2019`.
+
+  <details>
+    <summary>简介</summary>
+  	<p>
+    	None
+    </p>
+  </details>
 
 ## Dataset
 
