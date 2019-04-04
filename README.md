@@ -36,8 +36,9 @@ Markdown format:
 
 - [Papers](#papers)
   - [Survey](#survey)
-  - [Before](#before) - [2015](#2015) - [2016](#2016) - [2017](#2017) - [2018](#2018) - [2019](#2019)
+  - [Before](#before) - [2017](#2017) - [2018](#2018) - [2019](#2019)
 - [Dataset](#dataset)
+- [Benchmark Results](#benchmark-results)
 - [Popular Implementations](#popular-implementations)
   - [PyTorch](#pytorch)
   - [TensorFlow](#tensorflow)
@@ -63,14 +64,6 @@ Markdown format:
     	基于KITTI数据集（城市道路驾驶场景），数据库较小。
     </p>
   </details>
-
-### 2015
-
-- None
-
-### 2016
-
-- None
 
 ### 2017
 
@@ -99,7 +92,7 @@ Markdown format:
     RGB与Optical Flow同时作为输入，损失函数为inter-intra video ranking loss。
     </p>
     <p>
-    标了一个新数据集，DiDeMo（把video切成了连续的长度为5s的片段，即 0s-5s 是第一个片段，5s-10s是第二个...，然后为这5s的片段添加语句描述，这样做其实降低了localization的难度，退化成了一个有限集合的retrieval问题）。DiDeMo中描述句的特性主要包含三个方面：相机视角（zoom，pan，cameraman）、时间关系（after，first）和空间关系（left，bottom）。且动词所占比例较多，这种设计思想基于在定位过程中对算法行为的理解是非常重要的。
+    标了一个新数据集——DiDeMo（把video切成了连续的长度为5s的片段，即 0s-5s 是第一个片段，5s-10s是第二个...，然后为这5s的片段添加语句描述，这样做其实降低了localization的难度，退化成了一个有限集合的retrieval问题）。DiDeMo中描述句的特性主要包含三个方面：相机视角（zoom，pan，cameraman）、时间关系（after，first）和空间关系（left，bottom）。且动词所占比例较多，这种设计思想基于在定位过程中对算法行为的理解是非常重要的。
     </p>
     <p>
     Moment Context Network(MCN)对于复杂的描述仍定位困难，如“dog stops, then starts rolling around again”，如何更好的推理语言描述中的语义是一个潜在的改进方向。
@@ -122,8 +115,8 @@ Markdown format:
     <p>
      数据集方面：
       <ul> 
-  			<li>基于TACoS提供了Charades的语句标注，名为Charades-STA2；</li>
-  			<li>新数据集，DiDeMo（把video切成了连续的长度为5s的片段，即 0s-5s 是第一个片段，5s-10s是第二个...，然后为这5s的片段添加语句描述，这样做其实降低了localization的难度，退化成了一个有限集合的retrieval问题）；</li>
+  			<li>Charades-STA2；</li>
+  			<li>DiDeMo（把video切成了连续的长度为5s的片段，即 0s-5s 是第一个片段，5s-10s是第二个...，然后为这5s的片段添加语句描述，这样做其实降低了localization的难度，退化成了一个有限集合的retrieval问题）；</li>
   			<li>Activitynet-Caption也提供了时序的语句标注，这个数据集本来是为dense video captioning准备的，但也可以用来做language based localization这个问题。</li>
     	</ul>
     </p>
@@ -177,6 +170,51 @@ Markdown format:
       <img src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266669/Awesome%20Language%20Moment%20Retrieval/find_and_focus_-_4.png">
   </details>
 
+- [Temporal Modular Networks for Retrieving Complex Compositional Activities in Videos](<http://svl.stanford.edu/assets/papers/liu2018eccv.pdf>) - B. Liu et al, `ECCV2018`.
+
+  <details>
+    <summary>简介</summary>
+    <p>
+      Key Observation：自然语言描述中存在着基本的子结构，它对理解视频的结构起着至关重要的作用。
+    </p>
+    <p>
+     本文使用动态组合的神经网络模块来显式地建模Activity的多种复杂的自然语言描述的Compositional Structure，不同于以前分别进行语言和视觉的嵌入。
+    </p>
+    <p>
+      对语言描述解析成树结构，树的节点有两类：Base Nodes（单词级别）和Combine nodes(短语或句子级别)。这两类节点分别对应后面的两种Attention。模型结构如下图所示：
+      <div align="center">
+      <img height="400px"  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554343778/Awesome%20Language%20Moment%20Retrieval/TMN-1.png">
+    </div>
+    </p>
+  </details>
+
+- [Temporally Grounding Natural Sentence in Video](<https://aclweb.org/anthology/papers/D/D18/D18-1015/>) - J. Chen et al, `EMNLP2018`.
+
+  <details>
+    <summary>简介</summary>
+    <p>
+      为了使语言与视觉的建模更加紧密（Fine-grained），提出了一种Frame-by-Word Interactions。同时检索视频片段也是一次性单向过程，相对于生成很多交叠的proposal的方式很高效。模型结构如下图所示：
+      <div align="center">
+      <img height="450px"  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554344829/Awesome%20Language%20Moment%20Retrieval/TGN-1.png">
+    </div>
+    </p>
+  	<p>
+     主要分为三个部分：
+      <ul>
+        <li><b>Encoder</b>：两个LSTM分别提取视觉与语言特征；</li>
+        <li><b>Interactor</b>
+          <ul>
+            <li><b>Frame-Specific Sentence Feature</b>：针对每一帧计算当前句子特征（对所有单词特征结合视频某帧特征加权求和，具体权值计算可查阅论文）；</li>
+            <li><b>Interaction LSTM(i-LSTM)</b>：对每一时刻，拼接视觉特征与对应的句子特征作为LSTM的输入，其隐状态也参与上步中权值的计算；</li>
+          </ul>
+        </li>
+        <li>
+          <b>Grounder</b>：直接根据i-LSTM的隐状态，得到K个时间尺度在当前帧终止的Clip属于Ground-Truth的得分，这个过程是一次单向完成的，没有生成很多交叠的proposal，因此加速了定位，相对于CTRL、MCN得到了很高的FPS（实验得到验证）。
+        </li>
+      </ul>
+    </p>
+  </details>
+
 - [Object Referring in Videos with Language and Human Gaze](https://arxiv.org/abs/1801.01582) - A. B. Vasudevan et al, `CVPR 2018`. [[code]](<http://people.ee.ethz.ch/~arunv/ORGaze.html>). 
 
   <details>
@@ -194,6 +232,31 @@ Markdown format:
 - [Actor and Action Video Segmentation from a Sentence](<https://arxiv.org/abs/1803.07485>) - Kirill Gavrilyuk et al, `CVPR2018`.
 
 ### 2019
+
+- [Multilevel Language and Vision Integration for Text-to-Clip Retrieval](<https://arxiv.org/abs/1804.05113>) - H. Xu et al, `AAAI2019`. [[code]](<https://github.com/VisionLearningGroup/Text-to-Clip_Retrieval>)
+
+  <details>
+    <summary>简介</summary>
+    <p>
+      主要贡献：
+       <ul>
+        <li>将Query嵌入到生成proposal中，得到<b>Query-guided proposals（减少计算代价）</b>；</li>
+        <li>Early fusion，用LSTM建模Text与Clip之间<b>Fine-grained Similarity</b>；</li>
+        <li>将Clip-to-Text作为一个辅助任务，用多任务损失函数进行训练，发现模型在两个任务上皆有提升</b>。</li>
+       </ul>
+      query-guided SPN结构如下图所示：
+      <div align="center">
+      <img  height="200px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554375456/Awesome%20Language%20Moment%20Retrieval/SPN-1.png">
+    </div>
+    </p>
+  	<p>
+     <ul>
+        <li>上图底部为原始的SPN（Segment Proposal Network），query-guided SPN相当于加了一层Attention；</li>
+       <li>通过SPN得到一系列proposal，接下来就是把Query与Proposal之间检索匹配。具体匹配得分通过两层LSTM计算：第一层为单词层级；第二层为句子层级，同时每一步都结合视觉特征。如下图所示：<div align="center"><img height="200px"   src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554375456/Awesome%20Language%20Moment%20Retrieval/SPN-2.png"></div></li>
+        <li>多任务损失——在Triplet-based retrieval loss的基础之上，添加了Captioning loss。（第二层LSTM用于生成Caption，见上图底部）</li>
+     </ul>
+  	</p>
+  </details>
 
 - [MAN: Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment](https://arxiv.org/abs/1812.00087) - Da Zhang et al, `CVPR 2019`. 
 
@@ -220,18 +283,17 @@ Markdown format:
     </p>
   </details>
 
-- [Peeking into the Future: Predicting Future Person Activities and Locations in Videos](https://arxiv.org/abs/1902.03748) - Junwei Liang et al, `CVPR 2019`.
-
-  <details>
-    <summary>简介</summary>
-  	<p>
-    	None
-    </p>
-  </details>
-
 ## Dataset
 
-- [ActivityNet Captions dataset](http://cs.stanford.edu/people/ranjaykrishna/densevid/).
+- [ActivityNet Captions](http://cs.stanford.edu/people/ranjaykrishna/densevid/).
+- [Charades-STA](<https://allenai.org/plato/charades/>)
+- [DiDeMo](<https://github.com/LisaAnne/LocalizingMoments>).
+
+## Benchmark Results
+
+### ActivityNet Captions
+
+
 
 ## Popular Implementations
 
