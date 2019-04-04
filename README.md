@@ -87,6 +87,9 @@ Markdown format:
 
   <details>
     <summary>简介</summary>
+    <p>
+      <b>Moment Context Network(MCN)</b>
+    </p>
     <img height="300px"  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554263567/Awesome%20Language%20Moment%20Retrieval/LMVNL_-_1.png">
      <p>
     RGB与Optical Flow同时作为输入，损失函数为inter-intra video ranking loss。
@@ -103,6 +106,9 @@ Markdown format:
 
   <details>
     <summary>简介</summary>
+    <p>
+      <b>Cross-modal Temporal Regression Localizer(CTRL)</b>
+    </p>
     <img src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554261061/Awesome%20Language%20Moment%20Retrieval/TALL_-_1.png">
     <p>
       整个流程分为三步：
@@ -149,7 +155,7 @@ Markdown format:
   <details>
     <summary>简介</summary>
     <p>
-    	港中文的工作。
+      <b>Find and Focus(FIFO)</b>
     </p>
     <img height="300px"   src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266669/Awesome%20Language%20Moment%20Retrieval/find_and_focus_-_2.png">
     <p>
@@ -175,6 +181,9 @@ Markdown format:
   <details>
     <summary>简介</summary>
     <p>
+      <b>Temporal Modular Network(TMN)</b>
+    </p>
+    <p>
       Key Observation：自然语言描述中存在着基本的子结构，它对理解视频的结构起着至关重要的作用。
     </p>
     <p>
@@ -192,6 +201,9 @@ Markdown format:
 
   <details>
     <summary>简介</summary>
+    <p>
+      <b>Temporal Ground Network(TGN)</b>
+    </p>
     <p>
       为了使语言与视觉的建模更加紧密（Fine-grained），提出了一种Frame-by-Word Interactions。同时检索视频片段也是一次性单向过程，相对于生成很多交叠的proposal的方式很高效。模型结构如下图所示：
       <div align="center">
@@ -238,6 +250,9 @@ Markdown format:
   <details>
     <summary>简介</summary>
     <p>
+      <b>Query-guided Segment Proposal Network(QSPN)</b>
+    </p>
+    <p>
       主要贡献：
        <ul>
         <li>将Query嵌入到生成proposal中，得到<b>Query-guided proposals（减少计算代价）</b>；</li>
@@ -262,6 +277,9 @@ Markdown format:
 
   <details>
     <summary>简介</summary>
+    <p>
+      <b>Moment Alignment Network(MAN)</b>
+    </p>
   	<p>
     	首次引入GCN到定位中。
     </p>
@@ -286,14 +304,79 @@ Markdown format:
 ## Dataset
 
 - [ActivityNet Captions](http://cs.stanford.edu/people/ranjaykrishna/densevid/).
-- [Charades-STA](<https://allenai.org/plato/charades/>)
+- [Charades-STA](<https://allenai.org/plato/charades/>).
 - [DiDeMo](<https://github.com/LisaAnne/LocalizingMoments>).
+- [TACoS](<https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/research/vision-and-language/tacos-multi-level-corpus/>).
 
 ## Benchmark Results
 
-### ActivityNet Captions
+<table>
+	<tr>
+		<th style="text-align:center">Method</th>
+		<th colspan=3 style="text-align:center">ActivityNet<br>Captions</th>
+		<th colspan=3 style="text-align:center">Charades-STA</th>
+		<th colspan=3 style="text-align:center">DiDeMo</th>
+		<th colspan=3 style="text-align:center">TACoS</th>
+	</tr>
+	<tr>
+		<td align=center> </td>
+		<td align=center>R@1</td><td align=center>R@5</td><td align=center>R@10</td>
+		<td align=center>R@1</td><td align=center>R@5</td><td align=center>R@10</td>
+		<td align=center>R@1</td><td align=center>R@5</td><td align=center>mIoU</td>
+		<td align=center>R@1</td><td align=center>R@5</td><td align=center>mIoU</td>
+	</tr>
+	<tr>
+		<td>MCN</td>
+		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
+		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>28.10</td><td align=center>78.21</td><td align=center>41.08</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+	</tr>
+	<tr>
+		<td>CTRL</td>
+		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
+		<td align=center>23.63</td><td align=center>58.92</td><td align=center>-</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>13.30</td><td align=center>25.42</td><td align=center>-</td>
+	</tr>
+  <tr>
+		<td>FIFO</td>
+		<td align=center>14.05</td><td align=center>37.40</td><td align=center>-</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+	</tr>
+  <tr>
+		<td>TMN</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>22.92</td><td align=center>76.08</td><td align=center>35.17</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+	</tr>
+  <tr>
+		<td>TGN</td>
+    <td align=center><b>28.47</b></td><td align=center>44.20</td><td align=center>-</td>
+		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center><b>28.23</b></td><td align=center>76.26</td><td align=center><b>42.97</b></td>
+    <td align=center><b>18.90</b></td><td align=center><b>31.02</b></td><td align=center>-</td>
+	</tr>
+  <tr>
+		<td>QSPN</td>
+    <td align=center>27.7</td><td align=center><b>59.2</b></td><td align=center><b>69.3</b></td>
+		<td align=center>35.6</td><td align=center>79.4</td><td align=center><b>93.9</b></td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+	</tr>
+  <tr>
+    <td>MAN<br><I><b>(Only RGB)</b></I></td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center><b>46.53</b></td><td align=center><b>86.23</b></td><td align=center>-</td>
+    <td align=center>27.02</td><td align=center><b>81.70</b></td><td align=center>41.16</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+	</tr>
+</table>
 
-
+*Note that highest priority IoU=0.5*
 
 ## Popular Implementations
 
