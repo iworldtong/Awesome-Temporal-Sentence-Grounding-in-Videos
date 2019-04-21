@@ -294,9 +294,32 @@ Markdown format:
     <p>
       主要亮点：
       <ul>
-        <li>此前的方法在生成Clip时视觉信息与描述缺少结合，为了早期过滤掉与描述不相关的视觉特征，本文将描述特征做为动态滤波器，对从视频提取出的I3D特征进行滤波，;</li>
+        <li>此前的方法在生成Clip时视觉信息与描述缺少结合，为了早期过滤掉与描述不相关的视觉特征，本文将描述特征做为动态滤波器，对从视频提取出的I3D特征进行滤波;</li>
         <li>为生成多尺度的的Clip，采用时序池化;</li>
   			<li>为深度挖掘Moments之间的关系解决Structural Misalignment，创新的设计了IGAN（Iterative Graph Adjustment Network），将Clip作为图的节点，残差连接、迭代地优化邻接矩阵。下图可视化显示了IGAN的有效性：<div align="center"><img height="350px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/MAN_-_3.png"></div></li>
+    	</ul> 
+    </p>
+  </details>
+
+* [Weakly Supervised Video Moment Retrieval From Text Queries](<https://arxiv.org/abs/1904.03282>) - N. C. Mithun et al, `CVPR 2019`. 
+
+  <details>
+    <summary>简介</summary>
+    <p>
+      <b>Text-Guided Attention(TGA)</b>
+    </p>
+  	<p>
+    	弱监督学习，训练数据为video-text pairs。
+    </p>
+    <p>
+      整体结构：
+      <div align="center"><img  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/TGA-1.png"></div>
+    </p>
+    <p>
+      <ul>
+        <li>分别提取特征，对视频提取frame-wise信息;</li>
+        <li>使用<b>Text-Guided Attention</b>，提取Sentence-Wise Video Feature，使句子特征和与其语义相似视频帧的特征更相近。示意图如下：<div align="center"><img  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/TGA-2.png"></div></li>
+  			<li>在测试时，使用上面的注意力得分进行定位。</li>
     	</ul> 
     </p>
   </details>
@@ -372,6 +395,13 @@ Markdown format:
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
     <td align=center><b>46.53</b></td><td align=center><b>86.23</b></td><td align=center>-</td>
     <td align=center>27.02</td><td align=center><b>81.70</b></td><td align=center>41.16</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+	</tr>
+  <tr>
+    <td>TGA<br><I><b>(weakly)</b></I></td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>19.94</td><td align=center>65.52</td><td align=center>89.36</td>
+    <td align=center>12.19</td><td align=center>39.74</td><td align=center>24.92</td>
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
 	</tr>
 </table>
