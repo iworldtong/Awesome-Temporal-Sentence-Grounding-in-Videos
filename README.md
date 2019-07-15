@@ -323,6 +323,10 @@ Markdown format:
     	</ul> 
     </p>
   </details>
+  
+* [Weakly Supervised Video Moment Retrieval From Text Queries](<https://arxiv.org/abs/1904.03282>) - N. C. Mithun et al, `CVPR 2019`. 
+
+
 
 ## Dataset
 
