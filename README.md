@@ -31,6 +31,7 @@ Markdown format:
 ## Change Log
 
 - Apr. 03  Just started.
+- Jul. 15 CVPR19.
 
 ## Table of Contents
 
@@ -148,6 +149,8 @@ Markdown format:
     </p>
   </details>
 
+* [Attention-based Natural Language Person Retrieval](<https://arxiv.org/abs/1705.08923>) - Tao Zhou et al, `CVPR 2017`.
+
 ### 2018
 
 - [Find and Focus: Retrieve and Localize Video Events with Natural Language Queries](<http://openaccess.thecvf.com/content_ECCV_2018/papers/Dian_SHAO_Find_and_Focus_ECCV_2018_paper.pdf>) - Dian Shao  et al, `ECCV 2018`.
@@ -226,6 +229,8 @@ Markdown format:
       </ul>
     </p>
   </details>
+
+- [Localizing Moments in Video with Temporal Language](<https://arxiv.org/abs/1809.01337>) - Lisa Anne Hendricks et al, `EMNLP 2018`.
 
 - [Object Referring in Videos with Language and Human Gaze](https://arxiv.org/abs/1801.01582) - A. B. Vasudevan et al, `CVPR 2018`. [[code]](<http://people.ee.ethz.ch/~arunv/ORGaze.html>). 
 
@@ -324,6 +329,29 @@ Markdown format:
     </p>
   </details>
   
+* [Cross-Modal Interaction Networks for Query-Based Moment Retrieval in Videos](https://arxiv.org/abs/1906.02497) - Zhu Zhang et al, `SIGIR 2019`. 
+
+  <details>
+    <summary>简介</summary>
+    <p>
+      <b>Cross-Modal Interaction Network(CMIN)</b>
+    </p>
+    <p>
+      改进思路：
+    </p>
+  	<p>
+    	<ul>
+        <li>RNN忽视句法信息 --> syntactic GCN;</li>
+        <li>长时间事件，帧间关系难以建模 --> Multi-head Self-attention Mechanism;</li>
+  			<li>特征融合仍是rough one-stage interaction --> Multi-stage cross-modal interaction。</li>
+    	</ul> 
+    </p>
+    <p>
+      整体结构：
+      <div align="center"><img  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1563181354/Awesome%20Language%20Moment%20Retrieval/cmin-1.png"></div>
+    </p>
+  </details>
+
   
 
 ## Dataset
@@ -380,14 +408,14 @@ Markdown format:
 	</tr>
   <tr>
 		<td>TGN</td>
-    <td align=center><b>28.47</b></td><td align=center>44.20</td><td align=center>-</td>
+    <td align=center>28.47</td><td align=center>44.20</td><td align=center>-</td>
 		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
     <td align=center><b>28.23</b></td><td align=center>76.26</td><td align=center><b>42.97</b></td>
     <td align=center><b>18.90</b></td><td align=center><b>31.02</b></td><td align=center>-</td>
 	</tr>
   <tr>
 		<td>QSPN</td>
-    <td align=center>27.7</td><td align=center><b>59.2</b></td><td align=center><b>69.3</b></td>
+    <td align=center>27.7</td><td align=center>59.2</td><td align=center><b>69.3</b></td>
 		<td align=center>35.6</td><td align=center>79.4</td><td align=center><b>93.9</b></td>
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
@@ -405,6 +433,13 @@ Markdown format:
     <td align=center>19.94</td><td align=center>65.52</td><td align=center>89.36</td>
     <td align=center>12.19</td><td align=center>39.74</td><td align=center>24.92</td>
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+	</tr>
+  <tr>
+    <td>CMIN<br></td>
+    <td align=center><b>43.40</b></td><td align=center><b>67.95</b></td><td align=center>-</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>18.05</td><td align=center>27.02</td><td align=center>-</td>
 	</tr>
 </table>
 
