@@ -356,6 +356,8 @@ Markdown format:
 
 * [MAC: Mining Activity Concepts for Language-based Temporal Localization](https://arxiv.org/abs/1811.08925) - Runzhou Ge et al, `WACV 2019`. [[code]](https://github.com/runzhouge/MAC)
 
+* [Tripping through time: Efficient Localization of Activities in Videos](https://arxiv.org/abs/1904.09936) - Meera Hahn et al, ` Arxiv 2019`. 
+
 * [Related] [Localizing Unseen Activities in Video via Image Query](https://arxiv.org/abs/1906.12165) - Zhu Zhang et al, `IJCAI 2019`. 
 
 
