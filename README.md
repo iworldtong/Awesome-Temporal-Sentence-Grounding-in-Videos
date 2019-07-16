@@ -31,7 +31,7 @@ Markdown format:
 ## Change Log
 
 - Apr. 03  Just started.
-- Jul. 15 CVPR19.
+- Jul. 15 cvpr19.
 
 ## Table of Contents
 
@@ -179,7 +179,7 @@ Markdown format:
       <img src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266669/Awesome%20Language%20Moment%20Retrieval/find_and_focus_-_4.png">
   </details>
 
-- [Temporal Modular Networks for Retrieving Complex Compositional Activities in Videos](<http://svl.stanford.edu/assets/papers/liu2018eccv.pdf>) - B. Liu et al, `ECCV2018`.
+- [Temporal Modular Networks for Retrieving Complex Compositional Activities in Videos](<http://svl.stanford.edu/assets/papers/liu2018eccv.pdf>) - B. Liu et al, `ECCV 2018`.
 
   <details>
     <summary>简介</summary>
@@ -200,7 +200,7 @@ Markdown format:
     </p>
   </details>
 
-- [Temporally Grounding Natural Sentence in Video](<https://aclweb.org/anthology/papers/D/D18/D18-1015/>) - J. Chen et al, `EMNLP2018`.
+- [Temporally Grounding Natural Sentence in Video](<https://aclweb.org/anthology/papers/D/D18/D18-1015/>) - J. Chen et al, `EMNLP 2018`.
 
   <details>
     <summary>简介</summary>
@@ -246,11 +246,13 @@ Markdown format:
     </p>
   </details>
 
-- [Actor and Action Video Segmentation from a Sentence](<https://arxiv.org/abs/1803.07485>) - Kirill Gavrilyuk et al, `CVPR2018`.
+- [Actor and Action Video Segmentation from a Sentence](<https://arxiv.org/abs/1803.07485>) - Kirill Gavrilyuk et al, `CVPR 2018`.
+
+- [To Find Where You Talk: Temporal Sentence Localization in Video with Attention Based Location Regression](https://arxiv.org/abs/1804.07014) - Yitian Yuan et al, `Arxiv 2018`. 
 
 ### 2019
 
-- [Multilevel Language and Vision Integration for Text-to-Clip Retrieval](<https://arxiv.org/abs/1804.05113>) - H. Xu et al, `AAAI2019`. [[code]](<https://github.com/VisionLearningGroup/Text-to-Clip_Retrieval>)
+- [Multilevel Language and Vision Integration for Text-to-Clip Retrieval](<https://arxiv.org/abs/1804.05113>) - H. Xu et al, `AAAI 2019`. [[code]](<https://github.com/VisionLearningGroup/Text-to-Clip_Retrieval>)
 
   <details>
     <summary>简介</summary>
@@ -352,7 +354,11 @@ Markdown format:
     </p>
   </details>
 
-  
+* [MAC: Mining Activity Concepts for Language-based Temporal Localization](https://arxiv.org/abs/1811.08925) - Runzhou Ge et al, `WACV 2019`. [[code]](https://github.com/runzhouge/MAC)
+
+* [Related] [Localizing Unseen Activities in Video via Image Query](https://arxiv.org/abs/1906.12165) - Zhu Zhang et al, `IJCAI 2019`. 
+
+
 
 ## Dataset
 
@@ -411,7 +417,7 @@ Markdown format:
     <td align=center>28.47</td><td align=center>44.20</td><td align=center>-</td>
 		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
     <td align=center><b>28.23</b></td><td align=center>76.26</td><td align=center><b>42.97</b></td>
-    <td align=center><b>18.90</b></td><td align=center><b>31.02</b></td><td align=center>-</td>
+    <td align=center>18.90</td><td align=center><b>31.02</b></td><td align=center>-</td>
 	</tr>
   <tr>
 		<td>QSPN</td>
@@ -435,6 +441,13 @@ Markdown format:
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
 	</tr>
   <tr>
+    <td>ACL-K<br></td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center>30.48</td><td align=center>64.84</td><td align=center>-</td>
+    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
+    <td align=center><b>20.01</b></td><td align=center>30.66</td><td align=center>-</td>
+	</tr>
+  <tr>
     <td>CMIN<br></td>
     <td align=center><b>43.40</b></td><td align=center><b>67.95</b></td><td align=center>-</td>
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
@@ -454,6 +467,7 @@ Markdown format:
 ### TensorFlow
 
 - [jiyanggao/TALL](<https://github.com/jiyanggao/TALL>)
+- [runzhouge/MAC](https://github.com/runzhouge/MAC)
 
 ### Others
 
