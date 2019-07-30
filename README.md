@@ -356,7 +356,9 @@ Markdown format:
     </p>
   </details>
 
-* [MAC: Mining Activity Concepts for Language-based Temporal Localization](https://arxiv.org/abs/1811.08925) - Runzhou Ge et al, `WACV 2019`. [[code]](https://github.com/runzhouge/MAC)
+* [Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention](https://dl.acm.org/citation.cfm?id=3325019) - B. Jiang et al, `ICMR 2019`. [[code]](https://github.com/BonnieHuangxin/SLTA)
+
+* [MAC: Mining Activity Concepts for Language-based Temporal Localization](https://arxiv.org/abs/1811.08925) - Runzhou Ge Ge et al, `WACV 2019`. [[code]](https://github.com/runzhouge/MAC)
 
 * [ExCL: Extractive Clip Localization Using Natural Language Descriptions](https://arxiv.org/abs/1904.02755?context=cs.CL) - Soham Ghosh et al, `NAACL 2019`. 
 
@@ -420,7 +422,7 @@ Markdown format:
 		<td>TGN</td>
     <td align=center>28.47</td><td align=center>44.20</td><td align=center>-</td>
 		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center><b>28.23</b></td><td align=center>76.26</td><td align=center><b>42.97</b></td>
+    <td align=center>28.23</td><td align=center>76.26</td><td align=center><b>42.97</b></td>
     <td align=center>18.90</td><td align=center><b>31.02</b></td><td align=center>-</td>
 	</tr>
   <tr>
@@ -458,6 +460,13 @@ Markdown format:
     <td align=center>-</td><td align=center>-</td><td align=center>-</td>
     <td align=center>18.05</td><td align=center>27.02</td><td align=center>-</td>
 	</tr>
+  <tr>
+    <td>SLTA<br></td>
+    <td align=center>-</td><td align=center><b>-</b></td><td align=center>-</td>
+    <td align=center>22.81</td><td align=center>72.39</td><td align=center>-</td>
+    <td align=center><b>30.92</b></td><td align=center>70.18</td><td align=center>-</td>
+    <td align=center>11.92</td><td align=center>20.86</td><td align=center>-</td>
+	</tr>
 </table>
 
 *Note that highest priority IoU=0.5*
@@ -472,6 +481,7 @@ Markdown format:
 
 - [jiyanggao/TALL](<https://github.com/jiyanggao/TALL>)
 - [runzhouge/MAC](https://github.com/runzhouge/MAC)
+- [BonnieHuangxin/SLTA](https://github.com/BonnieHuangxin/SLTA)
 
 ### Others
 
