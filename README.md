@@ -1,4 +1,4 @@
-# Awesome-Language-Moment-Retrieval[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+Awesome-Language-Moment-Retrieval[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 <p align="center">
   <img width="250" src="https://camo.githubusercontent.com/1131548cf666e1150ebd2a52f44776d539f06324/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f6d61737465722f6d656469612f6c6f676f2e737667" "Awesome!">
@@ -28,11 +28,6 @@ Markdown format:
 - [Paper Name](link) - Author 1 et al, `Conference Year`. [[code]](link)
 ```
 
-## Change Log
-
-- Apr. 03  Just started.
-- Jul. 15 cvpr19.
-
 ## Table of Contents
 
 - [Papers](#papers)
@@ -53,317 +48,49 @@ Markdown format:
 
 ### Before
 
+- [Grounded Language Learning from Video Described with Sentences](https://www.aclweb.org/anthology/P13-1006/) - H. Yu et al, `ACL 2013`.
 - [Visual Semantic Search: Retrieving Videos via Complex Textual Queries](<https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Lin_Visual_Semantic_Search_2014_CVPR_paper.pdf>) - Dahua Lin et al, `CVPR 2014`.
-
-  <details>
-    <summary>简介</summary>
-    <img height="300px"  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554260117/Awesome%20Language%20Moment%20Retrieval/Visual_Semantic_Search_-_1.png">
-    <p>
-      手工设计特征。结合appearance, motion和spatial relations等信息设计视觉特征，采用了Semantic Graph设计描述特征，将二者的匹配问题转换成了整型线性规划问题（这个策略同样在ECCV18中也可以看到）。
-    </p>
-  	<p>
-    	基于KITTI数据集（城市道路驾驶场景），数据库较小。
-    </p>
-  </details>
+- [Jointly Modeling Deep Video and Compositional Text to Bridge Vision and Language in a Unified Framework](https://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9734) - R. Xu et al, `AAAI 2015`.
+- [Unsupervised Alignment of Actions in Video with Text Descriptions](https://pdfs.semanticscholar.org/5893/7d427ff36e1470b18120245148355047e4ea.pdf) - Y. C. Song et al, `IJCAI 2016`.
 
 ### 2017
 
-- [Where to Play: Retrieval of Video Segments using Natural-Language Queries](<https://arxiv.org/abs/1707.00251>) - S. Lee et al, `arXiv 2017`.
-
-  <details>
-    <summary>简介</summary>
-    <img   src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554260688/Awesome%20Language%20Moment%20Retrieval/where_to_look_-_1.png">
-    <p>
-      “Tracking by Captioning”的思想。
-    </p>
-  	<p>
-    	使用Densecap对视频每一帧进行描述，根据相邻图像Captions之间的相似性进行组合得到视频语义片段。
-    </p>
-    <p>
-    	采用了两种方法比较Captions之间的相似性：Word2Vec和Skip-thoughts vector。可能因为数据集较小的原因后者效果较优。
-    </p>
-  </details>
-
 - [Localizing Moments in Video with Natural Language](https://arxiv.org/abs/1708.01641) - Lisa Anne Hendricks et al, `ICCV 2017`. [[code]](<https://people.eecs.berkeley.edu/~lisa_anne/didemo.html>)
-
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Moment Context Network(MCN)</b>
-    </p>
-    <img height="300px"  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554263567/Awesome%20Language%20Moment%20Retrieval/LMVNL_-_1.png">
-     <p>
-    RGB与Optical Flow同时作为输入，损失函数为inter-intra video ranking loss。
-    </p>
-    <p>
-    标了一个新数据集——DiDeMo（把video切成了连续的长度为5s的片段，即 0s-5s 是第一个片段，5s-10s是第二个...，然后为这5s的片段添加语句描述，这样做其实降低了localization的难度，退化成了一个有限集合的retrieval问题）。DiDeMo中描述句的特性主要包含三个方面：相机视角（zoom，pan，cameraman）、时间关系（after，first）和空间关系（left，bottom）。且动词所占比例较多，这种设计思想基于在定位过程中对算法行为的理解是非常重要的。
-    </p>
-    <p>
-    Moment Context Network(MCN)对于复杂的描述仍定位困难，如“dog stops, then starts rolling around again”，如何更好的推理语言描述中的语义是一个潜在的改进方向。
-    </p>
-  </details>
 
 - [TALL: Temporal Activity Localization via Language Query](https://arxiv.org/abs/1705.02101) - Jiyang Gao et al, `ICCV 2017`. [[code]](<https://github.com/jiyanggao/TALL>). 
 
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Cross-modal Temporal Regression Localizer(CTRL)</b>
-    </p>
-    <img src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554261061/Awesome%20Language%20Moment%20Retrieval/TALL_-_1.png">
-    <p>
-      整个流程分为三步：
-  		<ul> 
-  			<li>C3D生成 visual feature；</li>
-  			<li>skip-thought / LSTM生成sentence embedding；</li>
-  			<li>将两部分的feature融合在一起 然后生成alignment score和boundary offset。alignment score代表了输入的query和clip是否匹配，boundary offset调整了输入clip的边界。</li>
-    	</ul>
-    </p>
-    <p>
-     数据集方面：
-      <ul> 
-  			<li>Charades-STA2；</li>
-  			<li>DiDeMo（把video切成了连续的长度为5s的片段，即 0s-5s 是第一个片段，5s-10s是第二个...，然后为这5s的片段添加语句描述，这样做其实降低了localization的难度，退化成了一个有限集合的retrieval问题）；</li>
-  			<li>Activitynet-Caption也提供了时序的语句标注，这个数据集本来是为dense video captioning准备的，但也可以用来做language based localization这个问题。</li>
-    	</ul>
-    </p>
-  </details>
-
 - [Spatio-temporal Person Retrieval via Natural Language Queries](https://arxiv.org/abs/1704.07945) - M. Yamaguchi et al, `ICCV 2017`.  [[code]](<https://www.mi.t.u-tokyo.ac.jp/>)
 
-  <details>
-    <summary>简介</summary>
-    <img height="250px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554265133/Awesome%20Language%20Moment%20Retrieval/SPRL_-_0.png">
-    <p>
-      本文聚焦于对视频中符合描述的人的检测，但可以方便地扩展到其他任务，如Clip Retrieval、Action Detection等。
-    </p>
-    <img height="300px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554265133/Awesome%20Language%20Moment%20Retrieval/SPRL_-_1.png">
-    <p>
-      模型结构如上图所示：
-  		<ul> 
-  			<li>检测每一帧中的人，将相关的检测框连接起来形成tubes；</li>
-  			<li>提取tube features，由6个子特征（box与image的RGB、Optical Flow和C3D特征拼接而成）；<img height="250px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554265133/Awesome%20Language%20Moment%20Retrieval/SPRL_-_2.png"></li>
-  			<li>提取description features，采用三种方法：FVs based on HGLMM、Skip-thought Vectors和RNN</li>
-        <li>在DSPE损失函数的基础上又添加了一项：不同模态正样本对之间距离的总和。这样做的目的是使模型直接让正样本对之间靠的更近，实验结果也验证了该方法有效。</li>
-    	</ul>
-    </p>
-  </details>
-
 * [Attention-based Natural Language Person Retrieval](<https://arxiv.org/abs/1705.08923>) - Tao Zhou et al, `CVPR 2017`.
+* [Where to Play: Retrieval of Video Segments using Natural-Language Queries](<https://arxiv.org/abs/1707.00251>) - S. Lee et al, `arxiv 2017`.
 
 ### 2018
 
 - [Find and Focus: Retrieve and Localize Video Events with Natural Language Queries](<http://openaccess.thecvf.com/content_ECCV_2018/papers/Dian_SHAO_Find_and_Focus_ECCV_2018_paper.pdf>) - Dian Shao  et al, `ECCV 2018`.
-
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Find and Focus(FIFO)</b>
-    </p>
-    <img height="300px"   src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266669/Awesome%20Language%20Moment%20Retrieval/find_and_focus_-_2.png">
-    <p>
-      Find and Focus(FIFO)模型整体分为两个部分：
-      <ul>
-        <li><b>Find</b>：top-level matching(paragraph vs video)，可以非常高效地滤除数据库中不相关的视频；</li>
-        <li><b>Focus</b>：part-level association，以句为单位定位视频片段。</li>
-      </ul>
-    </p>
-  <img src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266669/Awesome%20Language%20Moment%20Retrieval/find_and_focus_-_3.png">
-    <p>
-    <p>
-      在定位过程中，得到双流特征后，用<b>基于语义的TAG（Temporal Actionness Grouping）</b>生成Clip Proposal，将Sentences与Clip之间的Cross-domain Matching问题转换为<b>Linear Programming</b>问题。
-    </p>
-      <p>
-    	数据集采用ActivityNet Captions和Modified LSMDC。一些实验结果如下：
-    </p>
-      <img src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266669/Awesome%20Language%20Moment%20Retrieval/find_and_focus_-_4.png">
-  </details>
-
 - [Temporal Modular Networks for Retrieving Complex Compositional Activities in Videos](<http://svl.stanford.edu/assets/papers/liu2018eccv.pdf>) - B. Liu et al, `ECCV 2018`.
-
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Temporal Modular Network(TMN)</b>
-    </p>
-    <p>
-      Key Observation：自然语言描述中存在着基本的子结构，它对理解视频的结构起着至关重要的作用。
-    </p>
-    <p>
-     本文使用动态组合的神经网络模块来显式地建模Activity的多种复杂的自然语言描述的Compositional Structure，不同于以前分别进行语言和视觉的嵌入。
-    </p>
-    <p>
-      对语言描述解析成树结构，树的节点有两类：Base Nodes（单词级别）和Combine nodes(短语或句子级别)。这两类节点分别对应后面的两种Attention。模型结构如下图所示：
-      <div align="center">
-      <img height="400px"  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554343778/Awesome%20Language%20Moment%20Retrieval/TMN-1.png">
-    </div>
-    </p>
-  </details>
-
 - [Temporally Grounding Natural Sentence in Video](<https://aclweb.org/anthology/papers/D/D18/D18-1015/>) - J. Chen et al, `EMNLP 2018`.
-
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Temporal Ground Network(TGN)</b>
-    </p>
-    <p>
-      为了使语言与视觉的建模更加紧密（Fine-grained），提出了一种Frame-by-Word Interactions。同时检索视频片段也是一次性单向过程，相对于生成很多交叠的proposal的方式很高效。模型结构如下图所示：
-      <div align="center">
-      <img height="450px"  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554344829/Awesome%20Language%20Moment%20Retrieval/TGN-1.png">
-    </div>
-    </p>
-  	<p>
-     主要分为三个部分：
-      <ul>
-        <li><b>Encoder</b>：两个LSTM分别提取视觉与语言特征；</li>
-        <li><b>Interactor</b>
-          <ul>
-            <li><b>Frame-Specific Sentence Feature</b>：针对每一帧计算当前句子特征（对所有单词特征结合视频某帧特征加权求和，具体权值计算可查阅论文）；</li>
-            <li><b>Interaction LSTM(i-LSTM)</b>：对每一时刻，拼接视觉特征与对应的句子特征作为LSTM的输入，其隐状态也参与上步中权值的计算；</li>
-          </ul>
-        </li>
-        <li>
-          <b>Grounder</b>：直接根据i-LSTM的隐状态，得到K个时间尺度在当前帧终止的Clip属于Ground-Truth的得分，这个过程是一次单向完成的，没有生成很多交叠的proposal，因此加速了定位，相对于CTRL、MCN得到了很高的FPS（实验得到验证）。
-        </li>
-      </ul>
-    </p>
-  </details>
-
 - [Localizing Moments in Video with Temporal Language](<https://arxiv.org/abs/1809.01337>) - Lisa Anne Hendricks et al, `EMNLP 2018`.
-
 - [Object Referring in Videos with Language and Human Gaze](https://arxiv.org/abs/1801.01582) - A. B. Vasudevan et al, `CVPR 2018`. [[code]](<http://people.ee.ethz.ch/~arunv/ORGaze.html>). 
-
-  <details>
-    <summary>简介</summary>
-    <img height="250px"   src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266103/Awesome%20Language%20Moment%20Retrieval/ORVLHG_-_1.png">
-    <p>
-      主要特点是添加了观察视频时人眼的信息。
-    </p>
-  	<img   src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554266103/Awesome%20Language%20Moment%20Retrieval/ORVLHG_-_2.png">
-    <p>
-      用两个LSTM分别处理局部信息与全局信息，模型输入源较多，其中人眼图像通过GazeCapture得到视频的大致位置，并将其拼接到局部特征中去（Human Gaze）。应用在一定程度上比较受限。
-    </p>
-  </details>
-
 - [Actor and Action Video Segmentation from a Sentence](<https://arxiv.org/abs/1803.07485>) - Kirill Gavrilyuk et al, `CVPR 2018`.
-
-- [To Find Where You Talk: Temporal Sentence Localization in Video with Attention Based Location Regression](https://arxiv.org/abs/1804.07014) - Yitian Yuan et al, `Arxiv 2018`. 
+- [Attentive Moment Retrieval in Videos](http://staff.ustc.edu.cn/~hexn/papers/sigir18-video-retrieval.pdf) - M. Liu et al, `SIGIR 2018`.
 
 ### 2019
 
 - [Multilevel Language and Vision Integration for Text-to-Clip Retrieval](<https://arxiv.org/abs/1804.05113>) - H. Xu et al, `AAAI 2019`. [[code]](<https://github.com/VisionLearningGroup/Text-to-Clip_Retrieval>)
-
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Query-guided Segment Proposal Network(QSPN)</b>
-    </p>
-    <p>
-      主要贡献：
-       <ul>
-        <li>将Query嵌入到生成proposal中，得到<b>Query-guided proposals（减少计算代价）</b>；</li>
-        <li>Early fusion，用LSTM建模Text与Clip之间<b>Fine-grained Similarity</b>；</li>
-        <li>将Clip-to-Text作为一个辅助任务，用多任务损失函数进行训练，发现模型在两个任务上皆有提升</b>。</li>
-       </ul>
-      query-guided SPN结构如下图所示：
-      <div align="center">
-      <img  height="200px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554375456/Awesome%20Language%20Moment%20Retrieval/SPN-1.png">
-    </div>
-    </p>
-  	<p>
-     <ul>
-        <li>上图底部为原始的SPN（Segment Proposal Network），query-guided SPN相当于加了一层Attention；</li>
-       <li>通过SPN得到一系列proposal，接下来就是把Query与Proposal之间检索匹配。具体匹配得分通过两层LSTM计算：第一层为单词层级；第二层为句子层级，同时每一步都结合视觉特征。如下图所示：<div align="center"><img height="200px"   src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554375456/Awesome%20Language%20Moment%20Retrieval/SPN-2.png"></div></li>
-        <li>多任务损失——在Triplet-based retrieval loss的基础之上，添加了Captioning loss。（第二层LSTM用于生成Caption，见上图底部）</li>
-     </ul>
-  	</p>
-  </details>
-
+- [Read, Watch, and Move: Reinforcement Learning for Temporally Grounding Natural Language Descriptions in Videos](https://arxiv.org/abs/1901.06829) - He, Dongliang et al, `AAAI 2019`.
+- [To Find Where You Talk: Temporal Sentence Localization in Video with Attention Based Location Regression](http://arxiv.org/abs/1804.07014) - Y. Yuan et al, `AAAI 2019`.
+- [Semantic Proposal for Activity Localization in Videos via Sentence Query](http://yugangjiang.info/publication/19AAAI-actionlocalization.pdf) - S. Chen et al, `AAAI 2019`.
 - [MAN: Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment](https://arxiv.org/abs/1812.00087) - Da Zhang et al, `CVPR 2019`. 
 
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Moment Alignment Network(MAN)</b>
-    </p>
-  	<p>
-    	首次引入GCN到定位中。
-    </p>
-    <p>
-      本文认为此前的方法存在两个未解决问题：<b>Semantic Misalignment</b>和<b>Structural Misalignment</b>。如下图片所示：
-      <div align="center"><img height="300px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/MAN_-_1.png"></div>
-    </p>
-  <p>
-    整体结构：
-    <div align="center"><img height="400px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/MAN_-_2.png"></div>
-  </p>
-    <p>
-      主要亮点：
-      <ul>
-        <li>此前的方法在生成Clip时视觉信息与描述缺少结合，为了早期过滤掉与描述不相关的视觉特征，本文将描述特征做为动态滤波器，对从视频提取出的I3D特征进行滤波;</li>
-        <li>为生成多尺度的的Clip，采用时序池化;</li>
-  			<li>为深度挖掘Moments之间的关系解决Structural Misalignment，创新的设计了IGAN（Iterative Graph Adjustment Network），将Clip作为图的节点，残差连接、迭代地优化邻接矩阵。下图可视化显示了IGAN的有效性：<div align="center"><img height="350px" src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/MAN_-_3.png"></div></li>
-    	</ul> 
-    </p>
-  </details>
-
 * [Weakly Supervised Video Moment Retrieval From Text Queries](<https://arxiv.org/abs/1904.03282>) - N. C. Mithun et al, `CVPR 2019`. 
-
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Text-Guided Attention(TGA)</b>
-    </p>
-  	<p>
-    	弱监督学习，训练数据为video-text pairs。
-    </p>
-    <p>
-      整体结构：
-      <div align="center"><img  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/TGA-1.png"></div>
-    </p>
-    <p>
-      <ul>
-        <li>分别提取特征，对视频提取frame-wise信息;</li>
-        <li>使用<b>Text-Guided Attention</b>，提取Sentence-Wise Video Feature，使句子特征和与其语义相似视频帧的特征更相近。示意图如下：<div align="center"><img  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1554295680/Awesome%20Language%20Moment%20Retrieval/TGA-2.png"></div></li>
-  			<li>在测试时，使用上面的注意力得分进行定位。</li>
-    	</ul> 
-    </p>
-  </details>
-  
 * [Language-Driven Temporal Activity Localization_ A Semantic Matching Reinforcement Learning Model](<http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Language-Driven_Temporal_Activity_Localization_A_Semantic_Matching_Reinforcement_Learning_Model_CVPR_2019_paper.pdf>) - W. Wang et al, `CVPR 2019`. 
-
+* [ExCL: Extractive Clip Localization Using Natural Language Descriptions](https://arxiv.org/abs/1904.02755) - S. Ghosh et al, `NAACL 2019`.
 * [Cross-Modal Interaction Networks for Query-Based Moment Retrieval in Videos](https://arxiv.org/abs/1906.02497) - Zhu Zhang et al, `SIGIR 2019`. [[code]](https://github.com/ikuinen/CMIN_moment_retrieval)
-
-  <details>
-    <summary>简介</summary>
-    <p>
-      <b>Cross-Modal Interaction Network(CMIN)</b>
-    </p>
-    <p>
-      改进思路：
-    </p>
-  	<p>
-    	<ul>
-        <li>RNN忽视句法信息 --> syntactic GCN;</li>
-        <li>长时间事件，帧间关系难以建模 --> Multi-head Self-attention Mechanism;</li>
-  			<li>特征融合仍是rough one-stage interaction --> Multi-stage cross-modal interaction。</li>
-    	</ul> 
-    </p>
-    <p>
-      整体结构：
-      <div align="center"><img  src="https://res.cloudinary.com/dzu6x6nqi/image/upload/v1563181354/Awesome%20Language%20Moment%20Retrieval/cmin-1.png"></div>
-    </p>
-  </details>
-
 * [Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention](https://dl.acm.org/citation.cfm?id=3325019) - B. Jiang et al, `ICMR 2019`. [[code]](https://github.com/BonnieHuangxin/SLTA)
-
 * [MAC: Mining Activity Concepts for Language-based Temporal Localization](https://arxiv.org/abs/1811.08925) - Runzhou Ge Ge et al, `WACV 2019`. [[code]](https://github.com/runzhouge/MAC)
-
 * [ExCL: Extractive Clip Localization Using Natural Language Descriptions](https://arxiv.org/abs/1904.02755?context=cs.CL) - Soham Ghosh et al, `NAACL 2019`. 
-
-* [Tripping through time: Efficient Localization of Activities in Videos](https://arxiv.org/abs/1904.09936) - Meera Hahn et al, ` Arxiv 2019`. 
-
+* [Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention](https://arxiv.org/abs/1908.07236) - C. R. Opazo et al, `arxiv 2019`.
+* [Tripping through time: Efficient Localization of Activities in Videos](https://arxiv.org/abs/1904.09936) - Meera Hahn et al, `arxiv 2019`. 
 * [Related] [Localizing Unseen Activities in Video via Image Query](https://arxiv.org/abs/1906.12165) - Zhu Zhang et al, `IJCAI 2019`. 
 
 ## Dataset
@@ -375,101 +102,57 @@ Markdown format:
 
 ## Benchmark Results
 
-<table>
-	<tr>
-		<th style="text-align:center">Method</th>
-		<th colspan=3 style="text-align:center">ActivityNet<br>Captions</th>
-		<th colspan=3 style="text-align:center">Charades-STA</th>
-		<th colspan=3 style="text-align:center">DiDeMo</th>
-		<th colspan=3 style="text-align:center">TACoS</th>
-	</tr>
-	<tr>
-		<td align=center> </td>
-		<td align=center>R@1</td><td align=center>R@5</td><td align=center>R@10</td>
-		<td align=center>R@1</td><td align=center>R@5</td><td align=center>R@10</td>
-		<td align=center>R@1</td><td align=center>R@5</td><td align=center>mIoU</td>
-		<td align=center>R@1</td><td align=center>R@5</td><td align=center>mIoU</td>
-	</tr>
-	<tr>
-		<td>MCN</td>
-		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
-		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>28.10</td><td align=center>78.21</td><td align=center>41.08</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-	</tr>
-	<tr>
-		<td>CTRL</td>
-		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
-		<td align=center>23.63</td><td align=center>58.92</td><td align=center>-</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>13.30</td><td align=center>25.42</td><td align=center>-</td>
-	</tr>
-  <tr>
-		<td>FIFO</td>
-		<td align=center>14.05</td><td align=center>37.40</td><td align=center>-</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-	</tr>
-  <tr>
-		<td>TMN</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>22.92</td><td align=center>76.08</td><td align=center>35.17</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-	</tr>
-  <tr>
-		<td>TGN</td>
-    <td align=center>28.47</td><td align=center>44.20</td><td align=center>-</td>
-		<td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>28.23</td><td align=center>76.26</td><td align=center><b>42.97</b></td>
-    <td align=center>18.90</td><td align=center><b>31.02</b></td><td align=center>-</td>
-	</tr>
-  <tr>
-		<td>QSPN</td>
-    <td align=center>27.7</td><td align=center>59.2</td><td align=center><b>69.3</b></td>
-		<td align=center>35.6</td><td align=center>79.4</td><td align=center><b>93.9</b></td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-	</tr>
-  <tr>
-    <td>MAN<br><I><b>(Only RGB)</b></I></td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center><b>46.53</b></td><td align=center><b>86.23</b></td><td align=center>-</td>
-    <td align=center>27.02</td><td align=center><b>81.70</b></td><td align=center>41.16</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-	</tr>
-  <tr>
-    <td>TGA<br><I><b>(weakly)</b></I></td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>19.94</td><td align=center>65.52</td><td align=center>89.36</td>
-    <td align=center>12.19</td><td align=center>39.74</td><td align=center>24.92</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-	</tr>
-  <tr>
-    <td>ACL-K<br></td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>30.48</td><td align=center>64.84</td><td align=center>-</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center><b>20.01</b></td><td align=center>30.66</td><td align=center>-</td>
-	</tr>
-  <tr>
-    <td>CMIN<br></td>
-    <td align=center><b>43.40</b></td><td align=center><b>67.95</b></td><td align=center>-</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>-</td><td align=center>-</td><td align=center>-</td>
-    <td align=center>18.05</td><td align=center>27.02</td><td align=center>-</td>
-	</tr>
-  <tr>
-    <td>SLTA<br></td>
-    <td align=center>-</td><td align=center><b>-</b></td><td align=center>-</td>
-    <td align=center>22.81</td><td align=center>72.39</td><td align=center>-</td>
-    <td align=center><b>30.92</b></td><td align=center>70.18</td><td align=center>-</td>
-    <td align=center>11.92</td><td align=center>20.86</td><td align=center>-</td>
-	</tr>
-</table>
+#### ActivityNet Captions
 
-*Note that highest priority IoU=0.5*
+|         | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
+| :-----: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|   MCN   |    42.80    |    21.37    |    9.58     |      -      |      -      |      -      |      -      |      -      |
+|  CTRL   |    49.09    |    28.70    |    14.0     |      -      |      -      |      -      |      -      |      -      |
+|  ACRN   |    50.37    |    31.29    |    16.17    |      -      |      -      |      -      |      -      |      -      |
+|  QSPN   |      -      |    45.3     |    27.7     |    13.6     |      -      |    75.7     |    59.2     |    38.3     |
+|   TGN   |    70.06    |    45.51    |    28.47    |      -      |    79.10    |    57.32    |    44.20    |      -      |
+| TripNet |      -      |    48.42    |    32.19    |    13.93    |      -      |      -      |      -      |      -      |
+|  ABLR   |    73.30    |    55.67    |    36.79    |      -      |      -      |      -      |      -      |      -      |
+|  ExCL   |      -      |    63.30    |    43.6     |    24.1     |      -      |      -      |      -      |      -      |
+|  PFGA   |    75.25    |    51.28    |    33.04    |    19.26    |      -      |      -      |      -      |      -      |
+
+#### Charades-STA
+
+|         | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
+| :-----: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|  CTRL   |      -      |      -      |    23.63    |    8.89     |      -      |      -      |    58.92    |    29.52    |
+|  ABLR   |      -      |      -      |    24.36    |    9.01     |      -      |      -      |      -      |      -      |
+|  SMRL   |      -      |      -      |    24.36    |    11.17    |      -      |      -      |    61.25    |    32.08    |
+|  ACL-K  |      -      |      -      |    30.48    |    12.20    |      -      |      -      |    64.84    |    35.13    |
+|   SAP   |      -      |      -      |    27.42    |    13.36    |      -      |      -      |    66.37    |    38.15    |
+|  QSPN   |      -      |    54.7     |    35.6     |    15.8     |      -      |    95.8     |    79.4     |    45.4     |
+| TripNet |      -      |    51.33    |    36.61    |    14.50    |      -      |      -      |      -      |      -      |
+|  ExCL   |      -      |    65.1     |    44.1     |    23.3     |      -      |      -      |      -      |      -      |
+|   MAN   |      -      |      -      |    46.53    |    22.72    |      -      |      -      |    86.23    |    53.72    |
+|  PFGA   |      -      |    67.53    |    52.02    |    33.74    |      -      |      -      |      -      |      -      |
+
+#### DiDeMo
+
+|      | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
+| :--: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+| TMN  |    22.92    |      -      |      -      |      -      |    76.08    |      -      |      -      |      -      |
+| MCN  |    28.10    |      -      |      -      |      -      |    78.21    |      -      |      -      |      -      |
+| TGN  |    28.23    |      -      |      -      |      -      |    79.26    |      -      |      -      |      -      |
+| MAN  |    27.02    |      -      |      -      |      -      |    81.70    |      -      |      -      |      -      |
+
+#### TACoS
+
+|         | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
+| :-----: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|   MCN   |    2.62     |    1.64     |    1.25     |      -      |    2.88     |    1.82     |    1.01     |      -      |
+|  CTRL   |    24.32    |    18.32    |    13.30    |      -      |    48.73    |    36.69    |    25.42    |      -      |
+|   TGN   |    41.87    |    21.77    |    18.90    |      -      |    53.40    |    39.06    |    31.02    |      -      |
+|  ACRN   |    24.22    |    19.52    |    14.62    |      -      |    47.42    |    34.97    |    24.88    |      -      |
+|  ACL-K  |    31.64    |    24.17    |    20.01    |      -      |    57.85    |    42.15    |    30.66    |      -      |
+| TripNet |      -      |    23.95    |    19.17    |    9.52     |      -      |      -      |      -      |      -      |
+|  SMRL   |    26.51    |    20.25    |    15.95    |      -      |    50.01    |    38.47    |    27.84    |      -      |
+|  ABLR   |    34.7     |    19.5     |     9.4     |      -      |      -      |      -      |      -      |      -      |
+|  ExCL   |      -      |    45.5     |    28.0     |    14.6     |      -      |      -      |      -      |      -      |
 
 ## Popular Implementations
 
