@@ -1,16 +1,14 @@
-Awesome-Language-Moment-Retrieval[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+Awesome-Grounding-Natural-Language-in-Video[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 <p align="center">
   <img width="250" src="https://camo.githubusercontent.com/1131548cf666e1150ebd2a52f44776d539f06324/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f6d61737465722f6d656469612f6c6f676f2e737667" "Awesome!">
 </p>
 
-A curated list of language moment retrieval and related area. :-)
+A curated list of grounding natural language in video and related area. :-)
 
 ## Introduce
 
-从CVPR16开始，学术界开始关注phrase grounding（i.e. object referring），即给一个query，在image中找到找个query对应的object。2017，2018年，大家也逐渐开始关注video中类似的grounding问题，可以被总结为 Grounding Actions and Objects by Language in Videos。Grounding这个词可能不完全准确，很多论文对这个任务都有不同的定义，如Localizing Moments in Video with Natural Language、Retrieval via Natural Language Queries等等。这里统一简写为**Language Moment Retrieval**。（这里默认针对视频任务）
-
-以下论文总结主要分成两部分：
+本方向主要分为两类任务：
 
 - **Temporal Activity Localization by Language**：给定一个query（包含对activity的描述），找到对应动作（事件）的起止时间；
 
