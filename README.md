@@ -26,6 +26,10 @@ Markdown format:
 - [Paper Name](link) - Author 1 et al, `Conference Year`. [[code]](link)
 ```
 
+## Change Log
+
+* 2019/09/23: Add WSLLN (EMNLP 2019)
+
 ## Table of Contents
 
 - [Papers](#papers)
@@ -69,6 +73,7 @@ Markdown format:
 - [Temporally Grounding Natural Sentence in Video](<https://aclweb.org/anthology/papers/D/D18/D18-1015/>) - J. Chen et al, `EMNLP 2018`.
 - [Localizing Moments in Video with Temporal Language](<https://arxiv.org/abs/1809.01337>) - Lisa Anne Hendricks et al, `EMNLP 2018`.
 - [Object Referring in Videos with Language and Human Gaze](https://arxiv.org/abs/1801.01582) - A. B. Vasudevan et al, `CVPR 2018`. [[code]](<http://people.ee.ethz.ch/~arunv/ORGaze.html>). 
+- [Weakly Supervised Dense Event Captioning in Videos](https://arxiv.org/abs/1812.03849) - X. Duan et al, `NIPS 2018`. 
 - [Actor and Action Video Segmentation from a Sentence](<https://arxiv.org/abs/1803.07485>) - Kirill Gavrilyuk et al, `CVPR 2018`.
 - [Attentive Moment Retrieval in Videos](http://staff.ustc.edu.cn/~hexn/papers/sigir18-video-retrieval.pdf) - M. Liu et al, `SIGIR 2018`.
 
@@ -82,6 +87,7 @@ Markdown format:
 
 * [Weakly Supervised Video Moment Retrieval From Text Queries](<https://arxiv.org/abs/1904.03282>) - N. C. Mithun et al, `CVPR 2019`. 
 * [Language-Driven Temporal Activity Localization_ A Semantic Matching Reinforcement Learning Model](<http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Language-Driven_Temporal_Activity_Localization_A_Semantic_Matching_Reinforcement_Learning_Model_CVPR_2019_paper.pdf>) - W. Wang et al, `CVPR 2019`. 
+* [WSLLN: Weakly Supervised Natural Language Localization Networks](https://arxiv.org/abs/1909.00239) - M. Gao et al, `EMNLP 2019`. 
 * [ExCL: Extractive Clip Localization Using Natural Language Descriptions](https://arxiv.org/abs/1904.02755) - S. Ghosh et al, `NAACL 2019`.
 * [Cross-Modal Interaction Networks for Query-Based Moment Retrieval in Videos](https://arxiv.org/abs/1906.02497) - Zhu Zhang et al, `SIGIR 2019`. [[code]](https://github.com/ikuinen/CMIN_moment_retrieval)
 * [Cross-Modal Video Moment Retrieval with Spatial and Language-Temporal Attention](https://dl.acm.org/citation.cfm?id=3325019) - B. Jiang et al, `ICMR 2019`. [[code]](https://github.com/BonnieHuangxin/SLTA)
@@ -102,17 +108,19 @@ Markdown format:
 
 #### ActivityNet Captions
 
-|         | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
-| :-----: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-|   MCN   |    42.80    |    21.37    |    9.58     |      -      |      -      |      -      |      -      |      -      |
-|  CTRL   |    49.09    |    28.70    |    14.0     |      -      |      -      |      -      |      -      |      -      |
-|  ACRN   |    50.37    |    31.29    |    16.17    |      -      |      -      |      -      |      -      |      -      |
-|  QSPN   |      -      |    45.3     |    27.7     |    13.6     |      -      |    75.7     |    59.2     |    38.3     |
-|   TGN   |    70.06    |    45.51    |    28.47    |      -      |    79.10    |    57.32    |    44.20    |      -      |
-| TripNet |      -      |    48.42    |    32.19    |    13.93    |      -      |      -      |      -      |      -      |
-|  ABLR   |    73.30    |    55.67    |    36.79    |      -      |      -      |      -      |      -      |      -      |
-|  ExCL   |      -      |    63.30    |    43.6     |    24.1     |      -      |      -      |      -      |      -      |
-|  PFGA   |    75.25    |    51.28    |    33.04    |    19.26    |      -      |      -      |      -      |      -      |
+|                 | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
+| :-------------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|       MCN       |    42.80    |    21.37    |    9.58     |      -      |      -      |      -      |      -      |      -      |
+|      CTRL       |    49.09    |    28.70    |    14.0     |      -      |      -      |      -      |      -      |      -      |
+|      ACRN       |    50.37    |    31.29    |    16.17    |      -      |      -      |      -      |      -      |      -      |
+|      QSPN       |      -      |    45.3     |    27.7     |    13.6     |      -      |    75.7     |    59.2     |    38.3     |
+|       TGN       |    70.06    |    45.51    |    28.47    |      -      |    79.10    |    57.32    |    44.20    |      -      |
+|     TripNet     |      -      |    48.42    |    32.19    |    13.93    |      -      |      -      |      -      |      -      |
+|      ABLR       |    73.30    |    55.67    |    36.79    |      -      |      -      |      -      |      -      |      -      |
+|      ExCL       |      -      |    63.30    |    43.6     |    24.1     |      -      |      -      |      -      |      -      |
+|      PFGA       |    75.25    |    51.28    |    33.04    |    19.26    |      -      |      -      |      -      |      -      |
+| WSDEC-X(Weakly) |    62.7     |    42.0     |    23.3     |      -      |      -      |      -      |      -      |      -      |
+| WSLLN (Weakly)  |    75.4     |    42.8     |    22.7     |      -      |      -      |      -      |      -      |      -      |
 
 #### Charades-STA
 
@@ -131,12 +139,13 @@ Markdown format:
 
 #### DiDeMo
 
-|      | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
-| :--: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-| TMN  |    22.92    |      -      |      -      |      -      |    76.08    |      -      |      -      |      -      |
-| MCN  |    28.10    |      -      |      -      |      -      |    78.21    |      -      |      -      |      -      |
-| TGN  |    28.23    |      -      |      -      |      -      |    79.26    |      -      |      -      |      -      |
-| MAN  |    27.02    |      -      |      -      |      -      |    81.70    |      -      |      -      |      -      |
+|                | R@1 IoU@0.1 | R@1 IoU@0.3 | R@1 IoU@0.5 | R@1 IoU@0.7 | R@5 IoU@0.1 | R@5 IoU@0.3 | R@5 IoU@0.5 | R@5 IoU@0.7 |
+| :------------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|      TMN       |    22.92    |      -      |      -      |      -      |    76.08    |      -      |      -      |      -      |
+|      MCN       |    28.10    |      -      |      -      |      -      |    78.21    |      -      |      -      |      -      |
+|      TGN       |    28.23    |      -      |      -      |      -      |    79.26    |      -      |      -      |      -      |
+|      MAN       |    27.02    |      -      |      -      |      -      |    81.70    |      -      |      -      |      -      |
+| WSLLN (Weakly) |    19.4     |      -      |      -      |      -      |    54.4     |      -      |      -      |      -      |
 
 #### TACoS
 
