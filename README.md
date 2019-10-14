@@ -99,10 +99,10 @@ Markdown format:
 
 ## Dataset
 
-- [ActivityNet Captions](http://cs.stanford.edu/people/ranjaykrishna/densevid/).
-- [Charades-STA](<https://allenai.org/plato/charades/>).
-- [DiDeMo](<https://github.com/LisaAnne/LocalizingMoments>).
-- [TACoS](<https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/research/vision-and-language/tacos-multi-level-corpus/>).
+- [ActivityNet Captions](http://cs.stanford.edu/people/ranjaykrishna/densevid/)
+- [Charades-STA](<https://allenai.org/plato/charades/>)
+- [DiDeMo](<https://github.com/LisaAnne/LocalizingMoments>)
+- [TACoS](http://www.coli.uni-saarland.de/projects/smile/page.php?id=software)
 
 ## Benchmark Results
 
