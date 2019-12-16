@@ -1,4 +1,4 @@
-Awesome-Grounding-Natural-Language-in-Video[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome-Temporal-Sentence-Grounding-in-Videos[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 <p align="center">
   <img width="250" src="https://camo.githubusercontent.com/1131548cf666e1150ebd2a52f44776d539f06324/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f6d61737465722f6d656469612f6c6f676f2e737667" "Awesome!">
@@ -28,13 +28,13 @@ Markdown format:
 
 ## Change Log
 
-* 2019/09/23: Add WSLLN (EMNLP 2019)
+* 2019/12/16: Add CBP (AAAI 2020)
 
 ## Table of Contents
 
 - [Papers](#papers)
   - [Survey](#survey)
-  - [Before](#before) - [2017](#2017) - [2018](#2018) - [2019](#2019)
+  - [Before](#before) - [2017](#2017) - [2018](#2018) - [2019](#2019) - [2020](#2020)
 - [Dataset](#dataset)
 - [Benchmark Results](#benchmark-results)
 - [Popular Implementations](#popular-implementations)
@@ -87,6 +87,7 @@ Markdown format:
 
 * [Weakly Supervised Video Moment Retrieval From Text Queries](<https://arxiv.org/abs/1904.03282>) - N. C. Mithun et al, `CVPR 2019`. 
 * [Language-Driven Temporal Activity Localization_ A Semantic Matching Reinforcement Learning Model](<http://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Language-Driven_Temporal_Activity_Localization_A_Semantic_Matching_Reinforcement_Learning_Model_CVPR_2019_paper.pdf>) - W. Wang et al, `CVPR 2019`. 
+* [Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos](https://arxiv.org/pdf/1910.14303.pdf) - Yitian Yuan et al, `NIPS 2019`. [[code]](https://github.com/yytzsy/SCDM)
 * [WSLLN: Weakly Supervised Natural Language Localization Networks](https://arxiv.org/abs/1909.00239) - M. Gao et al, `EMNLP 2019`. 
 * [ExCL: Extractive Clip Localization Using Natural Language Descriptions](https://arxiv.org/abs/1904.02755) - S. Ghosh et al, `NAACL 2019`.
 * [Cross-Modal Interaction Networks for Query-Based Moment Retrieval in Videos](https://arxiv.org/abs/1906.02497) - Zhu Zhang et al, `SIGIR 2019`. [[code]](https://github.com/ikuinen/CMIN_moment_retrieval)
@@ -96,6 +97,12 @@ Markdown format:
 * [Proposal-free Temporal Moment Localization of a Natural-Language Query in Video using Guided Attention](https://arxiv.org/abs/1908.07236) - C. R. Opazo et al, `arxiv 2019`.
 * [Tripping through time: Efficient Localization of Activities in Videos](https://arxiv.org/abs/1904.09936) - Meera Hahn et al, `arxiv 2019`. 
 * [Related] [Localizing Unseen Activities in Video via Image Query](https://arxiv.org/abs/1906.12165) - Zhu Zhang et al, `IJCAI 2019`. 
+
+### 2020
+
+* [Temporally Grounding Language Queries in Videos by Contextual Boundary-aware Prediction](https://arxiv.org/abs/1909.05010) - Jingwen Wang et al, `AAAI 2020`. [[code]](https://github.com/JaywongWang/CBP)
+
+
 
 ## Dataset
 
@@ -119,6 +126,8 @@ Markdown format:
 |      ABLR       |    73.30    |    55.67    |    36.79    |      -      |      -      |      -      |      -      |      -      |
 |      ExCL       |      -      |    63.30    |    43.6     |    24.1     |      -      |      -      |      -      |      -      |
 |      PFGA       |    75.25    |    51.28    |    33.04    |    19.26    |      -      |      -      |      -      |      -      |
+|      SCDM       |      -      |    54.80    |    36.75    |    19.86    |      -      |    77.29    |    64.99    |    41.53    |
+|       CBP       |      -      |    54.30    |    35.76    |    17.80    |      -      |    77.63    |    65.89    |    46.20    |
 | WSDEC-X(Weakly) |    62.7     |    42.0     |    23.3     |      -      |      -      |      -      |      -      |      -      |
 | WSLLN (Weakly)  |    75.4     |    42.8     |    22.7     |      -      |      -      |      -      |      -      |      -      |
 
@@ -136,6 +145,8 @@ Markdown format:
 |  ExCL   |      -      |    65.1     |    44.1     |    23.3     |      -      |      -      |      -      |      -      |
 |   MAN   |      -      |      -      |    46.53    |    22.72    |      -      |      -      |    86.23    |    53.72    |
 |  PFGA   |      -      |    67.53    |    52.02    |    33.74    |      -      |      -      |      -      |      -      |
+|  SCDM   |      -      |      -      |    54.44    |    33.43    |      -      |      -      |    74.43    |    58.08    |
+|   CBP   |      -      |      -      |    36.80    |    18.87    |      -      |      -      |    70.94    |    50.19    |
 
 #### DiDeMo
 
@@ -160,6 +171,8 @@ Markdown format:
 |  SMRL   |    26.51    |    20.25    |    15.95    |      -      |    50.01    |    38.47    |    27.84    |      -      |
 |  ABLR   |    34.7     |    19.5     |     9.4     |      -      |      -      |      -      |      -      |      -      |
 |  ExCL   |      -      |    45.5     |    28.0     |    14.6     |      -      |      -      |      -      |      -      |
+|  SCDM   |      -      |    26.11    |    21.17    |      -      |      -      |    40.16    |    32.18    |      -      |
+|   CBP   |      -      |    27.31    |    24.79    |    19.10    |      -      |    43.64    |    37.40    |    25.59    |
 
 ## Popular Implementations
 
@@ -173,6 +186,9 @@ Markdown format:
 - [runzhouge/MAC](https://github.com/runzhouge/MAC)
 - [BonnieHuangxin/SLTA](https://github.com/BonnieHuangxin/SLTA)
 - [yytzsy/ABLR_code](https://github.com/yytzsy/ABLR_code)
+- [yytzsy/SCDM](https://github.com/yytzsy/SCDM)
+- [JaywongWang/TGN](https://github.com/JaywongWang/TGN)
+- [JaywongWang/CBP](https://github.com/JaywongWang/CBP)
 
 ### Others
 
